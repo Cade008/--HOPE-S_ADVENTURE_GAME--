@@ -804,6 +804,7 @@ function Game2(done) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     if (!instruction) {
+      showSlideControls(false, false);
       runRange("./W2_Images", 10, 10, () => {runRange("./W2_Images", 11, 11, display, false, 0);}, false, 3000);
       instruction = true;
       return;
