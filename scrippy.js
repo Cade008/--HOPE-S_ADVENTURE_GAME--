@@ -804,16 +804,15 @@ function Game2(done) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     if (!instruction) {
-      draw(W2[10]);
+      runRange("./W2_Images", 10, 10, () => {display();}, false, 3000);
       instruction = true;
       return;
-    }
-
-    if (currentIndex < questions.length) {
-      draw(questions[currentIndex].img);
+    } else {
+      if (currentIndex < questions.length) {
+        draw(questions[currentIndex].img);
     } else if (!finished) {
-      finished = true;
-      GAME2_PLAYED = true;
+        finished = true;
+        GAME2_PLAYED = true;
       if (answerBox) answerBox.style.display = "none";
       hideSubmitButton();
 
@@ -825,6 +824,7 @@ function Game2(done) {
   });
 
     }
+  };
   }
 
   function handleAnswer() {
