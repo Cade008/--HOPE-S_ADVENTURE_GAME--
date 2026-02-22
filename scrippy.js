@@ -154,7 +154,7 @@ let W3 = [];
 let BW =[];
 
 window.addEventListener("load", async () => {
-  await preloadFolder("./W1_Images", 1, 132);
+  await preloadFolder("./W1_Images", 1, 144);
   await preloadFolder("./W2_Images", 1, 21);
   await preloadFolder("./W3_Images", 1, 58);
   await preloadFolder("./Between_worlds", 1, 19);
@@ -506,15 +506,15 @@ function Game1_pt1(done) {
   
   hideAnswerBox();
   const choiceSlide = W1[20];
-  const lesson = [21, 27];
-  const intro = [28, 33];
-  const outro = [44, 46];
+  const lesson = [21, 29];
+  const intro = [30, 35];
+  const outro = [46, 47];
   const questions = [
-    { img: W1[34], a: "A", wrongImg: W1[35] },
-    { img: W1[36], a: "C", wrongImg: W1[37] },
+    { img: W1[36], a: "D", wrongImg: W1[37] },
     { img: W1[38], a: "B", wrongImg: W1[39] },
-    { img: W1[40], a: "B", wrongImg: W1[41] },
-    { img: W1[42], a: "D", wrongImg: W1[43] }
+    { img: W1[40], a: "C", wrongImg: W1[41] },
+    { img: W1[42], a: "C", wrongImg: W1[43] },
+    { img: W1[44], a: "C", wrongImg: W1[45] }
   ];
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -549,16 +549,16 @@ function Game1_pt1(done) {
 
 function Game1_pt2(done) {
   hideAnswerBox();
-  const choiceSlide = W1[47];
-  const lesson = [48,52];
-  const intro = [53, 58];
-  const outro = [69, 71];
+  const choiceSlide = W1[48];
+  const lesson = [49,59];
+  const intro = [60, 65];
+  const outro = [77, 78];
   const questions = [
-    { img: W1[59], a: "C", wrongImg: W1[60] },
-    { img: W1[61], a: "D", wrongImg: W1[62] },
-    { img: W1[63], a: "A", wrongImg: W1[64] },
-    { img: W1[65], a: "D", wrongImg: W1[66] },
-    { img: W1[67], a: "B", wrongImg: W1[68] }
+    { img: W1[66], a: "A", wrongImg: W1[67] },
+    { img: W1[68], a: "C", wrongImg: W1[69] },
+    { img: W1[70], a: "D", wrongImg: W1[71] },
+    { img: W1[72], a: "B", wrongImg: W1[73] },
+    { img: W1[74], a: "A", wrongImg: W1[75] }
   ];
 
   const canvas = getCanvas();
@@ -596,16 +596,16 @@ function Game1_pt2(done) {
 
 function Game1_pt3(done) {
   hideAnswerBox();
-  const choiceSlide = W1[72];
-  const lesson = [73, 81];
-  const intro = [82, 87];
-  const outro = [98, 100];
+  const choiceSlide = W1[79];
+  const lesson = [80, 95];
+  const intro = [96, 100];
+  const outro = [112, 113];
   const questions = [
-    { img: W1[88], a: "B", wrongImg: W1[89] },
-    { img: W1[90], a: "D", wrongImg: W1[91] },
-    { img: W1[92], a: "A", wrongImg: W1[93] },
-    { img: W1[94], a: "D", wrongImg: W1[95] },
-    { img: W1[96], a: "A", wrongImg: W1[97] }
+    { img: W1[101], a: "A", wrongImg: W1[102] },
+    { img: W1[103], a: "B", wrongImg: W1[104] },
+    { img: W1[105], a: "C", wrongImg: W1[106] },
+    { img: W1[107], a: "C", wrongImg: W1[108] },
+    { img: W1[109], a: "B", wrongImg: W1[110] }
   ];
 
   const canvas = getCanvas();
@@ -643,16 +643,16 @@ function Game1_pt3(done) {
 
 function Game1_pt4(done) {
   hideAnswerBox();
-  const choiceSlide = W1[101];
-  const lesson = [102, 109];
-  const intro = [110, 116];
-  const outro = [127,129];
+  const choiceSlide = W1[114];
+  const lesson = [115, 121];
+  const intro = [122, 128];
+  const outro = [140, 141];
   const questions = [
-    { img: W1[117], a: "C", wrongImg: W1[118] },
-    { img: W1[119], a: "A", wrongImg: W1[120] },
-    { img: W1[121], a: "D", wrongImg: W1[122] },
-    { img: W1[123], a: "C", wrongImg: W1[124] },
-    { img: W1[125], a: "C", wrongImg: W1[126] }
+    { img: W1[129], a: "C", wrongImg: W1[130] },
+    { img: W1[131], a: "C", wrongImg: W1[132] },
+    { img: W1[133], a: "C", wrongImg: W1[134] },
+    { img: W1[135], a: "D", wrongImg: W1[136] },
+    { img: W1[137], a: "D", wrongImg: W1[138] }
   ];
 
   const canvas = getCanvas();
@@ -713,7 +713,7 @@ function Game1Outro(done) {
   if (controls) controls.sc.style.display = "none";
 
   // Show the outro slides automatically
-  showSlidesBetween("./W1_Images", 130, 132, () => {
+  showSlidesBetween("./W1_Images", 142, 144, () => {
    runRange("./Between_worlds", 16, 17, () => {
   canvas.style.display = "none";
   done && done();
