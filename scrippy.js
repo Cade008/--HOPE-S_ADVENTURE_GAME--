@@ -782,6 +782,7 @@ function Game2(done) {
   let currentIndex = 0;
   let playerHealth = 2;
   let finished = false;
+  let instruction = false;
 
   const questions = [
     {
@@ -801,6 +802,12 @@ function Game2(done) {
 
   function display() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    if (!instruction) {
+      draw(W2[10]);
+      instruction = true;
+      return;
+    }
 
     if (currentIndex < questions.length) {
       draw(questions[currentIndex].img);
@@ -870,9 +877,7 @@ function lesson2(done) {
     Game2(done);
   }
 
-  runRange("./W3_Images", 1, 9, () => {
-  showSlidesBetween("./W3_Images", 10, 10, done, 3000);
-}, true);
+  runRange("./W2_Images", 1, 10, startGame, true, 0);
 }
 
 //---------- world 2 ----------//
