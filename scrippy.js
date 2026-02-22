@@ -870,7 +870,9 @@ function lesson2(done) {
     Game2(done);
   }
 
-  runRange("./W2_Images", 1, 10, startGame, true, 0);
+  runRange("./W3_Images", 1, 9, () => {
+  showSlidesBetween("./W3_Images", 10, 10, done, 3000);
+}, true);
 }
 
 //---------- world 2 ----------//
@@ -882,7 +884,7 @@ function lesson3(done) {
   hideSubmitButton();
 
   runRange("./W3_Images", 1, 15, () => {
-  showSlidesBetween("./W3_Images", 16, 17, done, 3000);
+  showSlidesBetween("./W3_Images", 16, 17, done, 2000);
 }, true);
   }
 
@@ -917,7 +919,7 @@ function Game3setup({ introRange, questionImg, correct, wrongImg, outroRange }, 
       answered = true;
       window.removeEventListener("keydown", onKey);
       if (outroRange) {
-        runRange("./W3_Images", outroRange[0], outroRange[1], done, false, 1500);
+        runRange("./W3_Images", outroRange[0], outroRange[1], done, false, 1000);
         showSlideControls(false);
       } else {
         done && done();
