@@ -787,7 +787,7 @@ function Game2(done) {
   const questions = [
     {
       img: W2[11],
-      answers: ["4/6", "2/3"],
+      answers: ["2/6", "1/3"],
       correctImg: W2[13],
       wrongImg: W2[12],
     },
