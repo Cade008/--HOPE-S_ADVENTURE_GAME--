@@ -802,13 +802,6 @@ function Game2(done) {
 
   function display() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    if (!instruction) {
-      showSlideControls(false, false);
-      runRange("./W2_Images", 10, 10, () => {runRange("./W2_Images", 11, 11, display, false, 0);}, false, 3000);
-      instruction = true;
-      return;
-    } else {
       if (currentIndex < questions.length) {
         draw(questions[currentIndex].img);
     } else if (!finished) {
@@ -823,8 +816,6 @@ function Game2(done) {
           done && done();
           }, false, 0);
   });
-
-    }
   };
   }
 
@@ -865,20 +856,20 @@ function Game2(done) {
 }
 
 function lesson2(done) {
+  hideMap();
   hideSubmitButton();
   hideAnswerBox();
   hideSkip();
-  document.getElementById("mapContainer").style.display = "none";
 
-  let started = false;
-
-  function startGame() {
-    if (started) return;
-    started = true;
-    Game2(done);
-  }
-
-  runRange("./W2_Images", 1, 10, startGame, true, 0);
+  runRange("./W2_Images", 1, 9, () => {
+    hideSubmitButton();
+    hideMap();
+    hideAnswerBox();
+    hideSkip();
+    showSlidesBetween("./W2_Images", 10, 10, () => {
+      Game2(done);
+    }, 3000);
+  }, true, 0);
 }
 
 //---------- world 2 ----------//
