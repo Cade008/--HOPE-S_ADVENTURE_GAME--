@@ -855,22 +855,6 @@ function Game2(done) {
   display();
 }
 
-function lesson2(done) {
-  hideMap();
-  hideSubmitButton();
-  hideAnswerBox();
-  hideSkip();
-
-  runRange("./W2_Images", 1, 9, () => {
-    hideSubmitButton();
-    hideMap();
-    hideAnswerBox();
-    hideSkip();
-    showSlidesBetween("./W2_Images", 10, 10, () => {
-      Game2(done);
-    }, 3000);
-  }, true, 0);
-}
 
 //---------- world 2 ----------//
 
